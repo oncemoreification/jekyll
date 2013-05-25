@@ -23,7 +23,7 @@ module Jekyll
     #
     # Returns nothing
     def info(topic, message)
-      $stdout.puts(message(topic, message)) if log_level >= INFO
+      $stdout.puts(message(topic, message)) if log_level <= INFO
     end
 
     # Public: Print a jekyll message to stderr
@@ -33,7 +33,7 @@ module Jekyll
     #
     # Returns nothing
     def warn(topic, message)
-      $stderr.puts(message(topic, message).yellow) if log_level >= WARN
+      $stderr.puts(message(topic, message).yellow) if log_level <= WARN
     end
 
     # Public: Print a jekyll error message to stderr
@@ -43,7 +43,7 @@ module Jekyll
     #
     # Returns nothing
     def error(topic, message)
-      $stderr.puts(message(topic, message).red) if log_level >= ERROR
+      $stderr.puts(message(topic, message).red) if log_level <= ERROR
     end
 
     # Public: Build a Jekyll topic method
