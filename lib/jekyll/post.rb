@@ -8,7 +8,7 @@ module Jekyll
     end
 
     # Valid post name regex.
-    MATCHER = /^(.+\/)*(\d+-\d+-\d+)-(.*)(\.[^.]+)$/
+    MATCHER = /(\d+)/
 
     # Attributes for Liquid templates
     ATTRIBUTES_FOR_LIQUID = %w[
@@ -25,8 +25,7 @@ module Jekyll
       path
     ]
 
-    # Post name validator. Post filenames must be like:
-    # 2008-11-05-my-awesome-post.textile
+    # Post name validator. Post filenames must be start with numeral
     #
     # Returns true if valid, false if not.
     def self.valid?(name)
